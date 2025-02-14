@@ -1,5 +1,6 @@
 'use client';
-import { useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 type MenuWrapperProps = {
     children: React.ReactNode;
@@ -7,7 +8,12 @@ type MenuWrapperProps = {
 
 export const MenuWrapper = ({ children }: MenuWrapperProps) => {
     const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
 
+    // Close menu when pathname changes (aka user click on a link)
+    useEffect(() => {
+        setIsOpen(false);
+    }, [pathname]);
     return (
         <>
             {/* Mobile menu button */}
