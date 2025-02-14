@@ -19,8 +19,8 @@ export default async function Stories() {
                 {breadcrumbs && <Breadcrumbs breadcrumbs={breadcrumbs} />}
                 <h1 className="text-4xl font-bold py-4">{title}</h1>
             </div>
-            <div className="pt-12 px-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 items-stretch max-w-screen-2xl mx-auto ">
+            <div className="pt-12 ">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 items-stretch max-w-screen-2xl mx-auto px-4 2xl:px-0">
                     {children?.map((story, index) => <Story story={story} key={index} />)}
                 </div>
             </div>

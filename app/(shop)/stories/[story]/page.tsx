@@ -38,7 +38,7 @@ export default async function StoryPage(props: StoriesProps) {
     const { intro, featured, upNext, story, title, media } = await fetchData(`/stories/${params.story}`);
 
     return (
-        <main className="mt-40 sm:px-4">
+        <main className="mt-40 px-4 2xl:px-0">
             <div className="max-w-screen-lg mx-auto text-center mb-12">
                 <h1 className="text-dark text-5xl font-medium py-4 text-balance">{title}</h1>
                 <div className="text-lg  text-center mx-auto leading-8 font-medium text-dark">
