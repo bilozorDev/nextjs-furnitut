@@ -43,12 +43,7 @@ export const MenuWrapper = ({ children }: MenuWrapperProps) => {
             {/* Mobile navigation */}
             {isOpen && (
                 <div className="absolute top-full left-0 right-0 mt-2 sm:hidden">
-                    <div
-                        className={`bg-light border border-muted rounded-lg shadow-lg p-4 transition-all duration-200 ease-in-out
-                        ${isOpen ? 'scale-100' : 'scale-95'}`}
-                    >
-                        {children}
-                    </div>
+                    <div className="bg-light border border-muted rounded-lg shadow-lg p-4">{children}</div>
                 </div>
             )}
         </>
