@@ -48,7 +48,7 @@ export default async function Page({ params }: PageProps) {
                     })}
                 </div>
             </div>
-            <div className="min-h-screen pt-12">
+            <div className="pt-12">
                 <Blocks blocks={blocks} />
             </div>
         </main>
