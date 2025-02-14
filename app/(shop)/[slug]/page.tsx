@@ -48,7 +48,7 @@ export default async function Page({ params }: PageProps) {
                     })}
                 </div>
             </div>
-            <div className="pt-12">
+            <div className="pt-12 px-4">
                 <Blocks blocks={blocks} />
             </div>
         </main>
