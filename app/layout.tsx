@@ -24,8 +24,10 @@ export default async function Layout({ children }: LayoutProps) {
             </head>
             <body className={`${manrope.className} bg-soft`}>
                 <CartProvider>
-                    {children}
-                    <Footer />
+                    <div className="flex flex-col min-h-screen justify-between">
+                        <div className="flex-grow">{children}</div>
+                        <Footer />
+                    </div>
                 </CartProvider>
             </body>
         </html>
