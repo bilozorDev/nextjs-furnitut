@@ -36,29 +36,28 @@ type StoriesProps = {
 export default async function StoryPage(props: StoriesProps) {
     const params = await props.params;
     const { intro, featured, upNext, story, title, media } = await fetchData(`/stories/${params.story}`);
-
     return (
-        <main className="mt-40">
+        <main className="mt-40 px-4 2xl:px-0">
             <div className="max-w-screen-lg mx-auto text-center mb-12">
                 <h1 className="text-dark text-5xl font-medium py-4 text-balance">{title}</h1>
-                <div className="text-lg  text-center mx-auto leading-8 font-medium text-dark">
+                <div className="text-lg text-center mx-auto leading-8 font-medium text-dark">
                     <ContentTransformer json={intro} />
                 </div>
             </div>
             <div className="max-w-screen-xl mx-auto [&_img]:w-full [&_img]:max-w-none overflow-hidden rounded-2xl ">
                 <Media {...media} preserveRatio sizes="(max-width: 600px) 100vw, 1280px" />
             </div>
-            <div className="grid grid-cols-5 max-w-screen-xl mx-auto mt-24">
+            <div className="grid grid-cols-1 lg:grid-cols-5 max-w-screen-xl mx-auto mt-24">
                 <div
-                    className={clsx('col-span-3 gap-24 px-12', {
+                    className={clsx('col-span-3 lg:px-12', {
                         '!col-span-5 max-w-screen-md mx-auto': featured === null,
                     })}
                 >
                     <ParagraphCollection paragraphs={story} />
                 </div>
                 {featured && (
-                    <div className="col-span-2 px-12 pt-6">
-                        <h3 className="font-bold text-sm mb-4">Featured products</h3>
+                    <div className="col-span-2 lg:px-12 pt-6">
+                        <h3 className="font-bold mb-4">Featured products</h3>
                         <div className="sticky top-20 min-h-[200px] bg-light rounded-lg border border-muted flex flex-col">
                             {featured?.items?.map((item, index) => {
                                 const product = item as Product;
@@ -86,11 +85,13 @@ export default async function StoryPage(props: StoriesProps) {
                 )}
             </div>
             {upNext && (
-                <div className="mt-24 px-12 max-w-screen-2xl mx-auto">
+                <div className="mt-24 lg:px-12 max-w-screen-2xl mx-auto">
                     <div className="px-0 border-t border-muted  pt-24  ">
                         <h2 className="text-2xl  py-4 font-bold">Up next</h2>
                         <Slider type="story" options={{ loop: false, align: 'start' }}>
-                            {upNext.items?.map((item) => <Story story={item} key={item?.path} />)}
+                            {upNext.items?.map((item) => (
+                                <Story story={item} key={item?.path} />
+                            ))}
                         </Slider>
                     </div>
                 </div>

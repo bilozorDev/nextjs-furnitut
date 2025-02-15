@@ -33,7 +33,7 @@ export default async function Page({ params }: PageProps) {
 
     return (
         <main>
-            <div className="page  pb-6">
+            <div className="page pb-6">
                 <Breadcrumbs breadcrumbs={breadcrumbs} />
                 <h1 className="text-4xl font-bold py-4">{name}</h1>
                 <div className="gap-4 flex">
@@ -48,7 +48,7 @@ export default async function Page({ params }: PageProps) {
                     })}
                 </div>
             </div>
-            <div className="min-h-screen pt-12">
+            <div className="pt-12 ">
                 <Blocks blocks={blocks} />
             </div>
         </main>

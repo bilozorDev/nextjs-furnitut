@@ -14,7 +14,7 @@ export const ProductSlider = ({ block }: ProductSliderProps) => {
         <div className="flex-col flex items-center py-12">
             <Typography {...block} />
             {!!products?.variants?.length && (
-                <div className="w-full pb-24">
+                <div className="w-full max-w-screen-2xl pb-24">
                     <Slider options={{ loop: true, align: 'start' }}>
                         {products.variants.map((item) =>
                             !!item?.product ? (
